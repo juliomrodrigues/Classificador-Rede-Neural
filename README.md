@@ -1,8 +1,10 @@
-# Classificador-Rede-Neural
-#### Treinando um modelo de classificação por regras e aplicando numa base de dados.
-#### Objetivo: Prever se uma pessoa possui renda anual <= ou > 50 mil dólares por ano.
+# Classificador Rede Neural
+### Descrição
+Treinando um algoritmo de rede neural para classificação, aplicando em uma base de dados para classificar registros e compartilhar os resultados(Censo de 1994 - EUA).
 
-Base Line Classifier = 0.7559 (ZeroR)
+O objetivo é prever se uma pessoa possui renda anual <= ou > 50 mil dólares por ano.
+
+**Percentual mínimo a ser batido** -> Base Line Classifier = 0.7559 (ZeroR).
 
 ### Resultados - Validação Cruzada - StratifiedKFold
 
@@ -11,7 +13,7 @@ Base Line Classifier = 0.7559 (ZeroR)
 0.6246 | LabelEncoder | 0.2492
 0.7655 | OneHotEncoder | 0.0847
 0.8478 | LabelEncoder + StandardScaler | 0.0067
-0.8320 | OneHotEncoder + StandardScaler | 0.0062
+0.8328 | OneHotEncoder + StandardScaler | 0.0062
 **0.8316** | **LabelEnconder + OneHotEncoder + StandardScaler** | **0.0039**
 
 ### Matriz de Confusão (Média):
@@ -24,28 +26,32 @@ A Matriz na tabela acima é formada pela média de todas as matrizes geradas ao 
 
 A diagonal principal (em negrito) destaca os registros classificados corretamente.
 
+### Especificações dos parametros usados:
+- MLPClassifier(verbose= True, max_iter= 1000, tol= 0.000010)
+
 ### Bibliotecas usadas:
 - Pandas
 - Sklearn
 - Numpy
 
-### Técnicas de Pré-Processamento e Tratamento dos dados usada:
-- LabelEnconder;
-- OneHotEncoder;
-- StandardScaler;
-
 ### Ferramentas Usadas:
 - Anaconda
 - Spyder
-
-### Linguagem:
-- Python
 
 ### Fonte da Base de Dados: 
 - Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 
 ### Como usar:
-- Basta fazer o download do código fonte e da base de dados. Para executar o código por partes(células) e testar diferentes possibilidades de pré-processamento, recomendo uma IDE como Spyder ou o Jupyter. (Támbem é necessário ter o Python instalado no seu computador)
+1. Faça o download do classificador já treinado dispoível neste mesmo repositório [aqui]().
+2. Abra o arquivo.py que deseja usar o classificador ou então crie um novo.
+3. Execute o código abaixo para fazer a importação:
+~~~~python
+import pickle
+classificador = pickle.load(open('classificador_rede_neural.sav', 'rb'))
+
+~~~~~
+4. Pronto, agora o classficador está pronto para ser usado.
+
 
 ### Outros Classificadores
 - [Naive Bayes](https://github.com/juliomrodrigues/Classificador-Naive-Bayes)
